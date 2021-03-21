@@ -66,9 +66,9 @@ if (document.querySelector(".modal-feedback-contact")) {
   window.addEventListener("keydown", function (evt) {
     // remove(evt, formModal, "modal-active", "modal-error");
 
-
     if (evt.keyCode === 27) {
-      if (formModal.classList.contains("modal-active")) { //Проверяем открыто ли окно с формой или нет
+      if (formModal.classList.contains("modal-active")) {
+        //Проверяем открыто ли окно с формой или нет
         formModal.classList.remove("modal-active");
         formModal.classList.remove("modal-error");
       }
@@ -97,11 +97,16 @@ if (document.querySelector(".modal-buy")) {
     buttonBuys[i].addEventListener("click", function (evt) {
       evt.preventDefault();
 
-      if (Number(basketCount.textContent) !== 9 && !modalBuy.classList.contains("modal-active")) {
+      if (
+        Number(basketCount.textContent) !== 9 &&
+        !modalBuy.classList.contains("modal-active")
+      ) {
         basketCount.textContent = Number(basketCount.textContent) + 1;
         modalBuy.classList.add("modal-active");
       } else if (Numder(basketCount.textContent) === 9) {
-        alert("Ну и на кой тебе столько??? Остановись!!! Корзина то не резиновая");
+        alert(
+          "Ну и на кой тебе столько??? Остановись!!! Корзина то не резиновая"
+        );
       }
 
       // basket.innerHTML = "Корзина: " + productQuantity;
@@ -122,16 +127,18 @@ if (document.querySelector(".modal-buy")) {
 
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
-      if (modalBuy.classList.contains("modal-active")) { //Проверяем открыто ли окно с формой или нет
+      if (modalBuy.classList.contains("modal-active")) {
+        //Проверяем открыто ли окно с формой или нет
         modalBuy.classList.remove("modal-active");
       }
     }
   });
 }
 
-
 if (document.querySelector(".products-button-bookmarks")) {
-  const buttonBookmarks = document.querySelectorAll(".products-button-bookmarks");
+  const buttonBookmarks = document.querySelectorAll(
+    ".products-button-bookmarks"
+  );
   const bookmarksLink = document.querySelector(".bookmarks-link");
 
   let bookmarkQuantity = 0;
@@ -146,7 +153,9 @@ if (document.querySelector(".products-button-bookmarks")) {
         bookmarkQuantity += 1;
         bookmarksLink.classList.add("header-link-full");
       } else {
-        alert("Да госпади, что же ты такой ненасытный то??? Нету больше места в закладках,угомонись!!!");
+        alert(
+          "Да госпади, что же ты такой ненасытный то??? Нету больше места в закладках,угомонись!!!"
+        );
       }
 
       bookmarksLink.innerHTML = "Закладки: " + bookmarkQuantity;
@@ -170,7 +179,8 @@ if (document.querySelector(".modal-map")) {
 
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
-      if (modalMap.classList.contains("modal-active")) { //Проверяем открыто ли окно с формой или нет
+      if (modalMap.classList.contains("modal-active")) {
+        //Проверяем открыто ли окно с формой или нет
         modalMap.classList.remove("modal-active");
       }
     }
@@ -191,7 +201,6 @@ if (document.querySelector(".offers-slide")) {
   }
 
   for (let i = 0; i < offersSlides.length; i++) {
-
     let dot = document.createElement("button");
     dot.classList.add("offers-slider-dot");
     wrapDots.appendChild(dot);
@@ -220,7 +229,6 @@ if (document.querySelector(".offers-slide")) {
       dots[stcik].classList.add("offers-slider-dot-active");
     });
 
-
     controlBack.addEventListener("click", function () {
       if (offersSlides[stcik - 1]) {
         stcik = stcik - 1;
@@ -236,7 +244,6 @@ if (document.querySelector(".offers-slide")) {
       offersSlides[stcik].classList.add("offers-slide-active");
       dots[stcik].classList.add("offers-slider-dot-active");
     });
-
 
     dots[i].addEventListener("click", function () {
       stcik = i;

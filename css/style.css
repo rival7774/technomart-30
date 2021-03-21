@@ -352,7 +352,7 @@ a {
   margin-left: 10px;
 }
 
-.header-signup-link:nth-child(n+3) {   /******************Нужно?*******************/
+.header-signup-link:nth-child(n+3) {
   margin-top: 5px;
 }
 
